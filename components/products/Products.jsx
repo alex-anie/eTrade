@@ -46,7 +46,7 @@ export default function ProductList() {
         {/* Fetching from FakeStore API */}
         <View>
           {loading ? (
-            <ActivityIndicator size="large" color="#0000ff" /> // Loading state
+            <ActivityIndicator size="large" color="#0000ff" testID="loader" /> // Loading state
           ) : error ? (
             <Text style={styles.errorText}>{error}</Text> // Error state
           ) : (
@@ -56,7 +56,7 @@ export default function ProductList() {
               numColumns={3}
               ItemSeparatorComponent={() => <View style={{ width: 20 }} />}
               renderItem={({ item }) => (
-                <View style={styles.card}>
+                <View style={styles.card}  testID="fakedata">
                   {/* Image heading */}
                   <View style={styles.heading}>
                     <Image

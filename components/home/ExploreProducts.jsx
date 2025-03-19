@@ -5,6 +5,7 @@ import { gadgets } from '@/data/data'
 import { useState, useEffect } from 'react';
 import Buttons from './Buttons';
 import HeadingText from './HeadingText';
+import Rate from './Rate';
 
 export default function ExploreProduct() {
     const [data, setData] = useState(gadgets);
@@ -36,14 +37,19 @@ export default function ExploreProduct() {
                                     <View style={styles.heading}>
                                         <Image source={item.imageUrl} style={styles.productImage} contentFit="contain"/>
                                     </View>
-
+                                    
                                     {/* Text body */}
                                     <View style={styles.body}>
                                         <Text style={styles.productName}>{item.product}</Text>
                                         <Text style={styles.description}>{item.description}</Text>
                                         <View style={styles.textWrapper}>
-                                            <Text style={styles.price}>{item.price.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</Text>
-                                            <Text style={styles.oldPrice}>{item.oldPrice.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</Text>
+                                            <View style={styles.priceWrapper}>
+                                                <Text style={styles.price}>{item.price.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</Text>
+                                                <Text style={styles.oldPrice}>{item.oldPrice.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</Text>
+                                            </View>
+                                            <View>
+                                                <Rate />
+                                            </View>
                                         </View>
                                         <Text style={styles.star}>{item.star}</Text>
                                     </View>
@@ -97,10 +103,14 @@ const styles = StyleSheet.create({
 
     textWrapper: {
         flexDirection: 'row',
-        justifyContent: 'flex-start',
+        justifyContent: 'space-between',
         gap: 10,
         marginTop: 5,
         marginBottom: 5
+    },
+    priceWrapper: {
+        flexDirection: 'row',
+        gap: 10
     },
     price: {
         fontWeight: '700',

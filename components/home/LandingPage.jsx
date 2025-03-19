@@ -12,7 +12,7 @@ return (
                 <ImageBackground source={imgUrl} style={styles.imageBg} resizeMode="cover">
                     <View style={styles.overlayContent}>
                         <Text style={styles.overlayText}>{heroText}</Text>
-                        <TouchableOpacity style={styles.button} onPress={() => alert('Button Pressed!')}>
+                        <TouchableOpacity testID="button" style={styles.button} onPress={() => alert('Button Pressed!')}>
                             <Text style={styles.buttonText}>Get Started</Text>
                         </TouchableOpacity>
                     </View>
