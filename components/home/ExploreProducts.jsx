@@ -10,8 +10,6 @@ import Rate from './Rate';
 export default function ExploreProduct() {
     const [data, setData] = useState(gadgets);
 
-    console.log('testing data', data)
-
     const monitor = require('@/assets/images/gadgets/monitor.png')
 
     return (
