@@ -25,6 +25,6 @@ jobs:
         with:
           start: npx expo start --web
           wait-on: 'http://localhost:8081'
-          wait-on-timeout: 180
+          wait-on-timeout: 10000
           browser: chrome
           config: baseUrl=http://localhost:8081
