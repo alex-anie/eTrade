@@ -10,9 +10,10 @@
   },
   "include": [
     "**/*.ts",
+    "**/*.js",
     "**/*.tsx",
     "**/*.jsx",
     ".expo/types/**/*.ts",
     "expo-env.d.ts"
-, "app/_layout.jsx", "app/(tabs)/index.jsx"  ]
+, "app/_layout.jsx", "app/(tabs)/index.jsx", "cypress/support/e2e.js", "cypress/support/commands.js"  ]
 }
